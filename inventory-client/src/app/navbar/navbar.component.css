@@ -1,3 +1,14 @@
 #navbar{
     background-color:rgb(11, 199, 121);
 }
+#sac{
+    -webkit-box-shadow:0px 5px 5px;
+    -moz-box-shadow:0px 5px 5px;
+    box-shadow:0px 5px 5px;
+}
+.header-btns{
+    text-align: right;
+}
+#head-btn{
+    margin: 2px;
+}
