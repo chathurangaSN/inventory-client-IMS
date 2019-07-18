@@ -1,1 +1,19 @@
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
+<app-navbar></app-navbar>
+<div>
+  <h1>.</h1>
+</div>
+<div class="row" style="padding-top: 1px;">
+
+  <div class="col-2 bg-info" style="padding-top: 5px;">
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <div class="col-10" style="background-color: rgb(100, 209, 209)">
+    <hr>
+    <router-outlet></router-outlet>
+  </div>
+
+</div>
+
+<app-footer></app-footer>
