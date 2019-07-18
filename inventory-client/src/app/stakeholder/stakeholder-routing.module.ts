@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { StakeholderHomeComponent } from './stakeholder-home/stakeholder-home.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:'',component:StakeholderHomeComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
