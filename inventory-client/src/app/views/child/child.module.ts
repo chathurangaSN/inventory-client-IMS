@@ -6,7 +6,10 @@ import { ChildHomeComponent } from './child-home/child-home.component';
 import { ChildDetailsComponent } from './child-details/child-details.component';
 
 @NgModule({
-  declarations: [ChildHomeComponent, ChildDetailsComponent],
+  declarations: [
+    ChildHomeComponent,
+    ChildDetailsComponent
+  ],
   imports: [
     CommonModule,
     ChildRoutingModule
