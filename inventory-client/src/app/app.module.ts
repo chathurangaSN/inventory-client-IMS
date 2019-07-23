@@ -13,6 +13,11 @@ import { RegisterComponent } from './views/register/register.component';
 import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
 import { DefaultLayoutComponent } from './containers/default-layout/default-layout.component';
 
+import {HttpClientModule} from '@angular/common/http'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule }   from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,12 +28,16 @@ import { DefaultLayoutComponent } from './containers/default-layout/default-layo
     LoginComponent,
     RegisterComponent,
     PageNotFoundComponent,
-    DefaultLayoutComponent,
+    DefaultLayoutComponent
   ],
   imports: [
     BrowserModule,
     AngularFontAwesomeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
