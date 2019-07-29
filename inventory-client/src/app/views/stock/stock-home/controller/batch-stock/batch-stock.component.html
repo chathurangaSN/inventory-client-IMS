@@ -1,0 +1,152 @@
+<div class="col-md-12">
+    <h3>Create Batch</h3>
+    <br>
+    <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+
+        <div class="row" name="FormlogComponent">
+
+            <div class="col-md-6">
+                <div>
+                    <!-- [hidden]="hidelog" -->
+
+
+                    <div class="form-group" hidden>
+                        <label>ID</label>
+                        <input name="id" #id="ngModel" [(ngModel)]="service.batchDetails.id" class="form-control">
+                        <!-- <div class="validation-error" >This field is required</div> -->
+                    </div>
+
+                    <div class="form-group">
+                        <label>Number</label>
+                        <input name="number" #number="ngModel" [(ngModel)]="service.batchDetails.number"
+                            class="form-control" required>
+                        <div class="validation-error" *ngIf="number.invalid && number.touched">This field is required
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Manufacture Date</label>
+                                <input name="manufactureDate" #manufactureDate="ngModel"
+                                    [(ngModel)]="service.batchDetails.manufactureDate" class="form-control" required>
+                                <div class="validation-error"
+                                    *ngIf="manufactureDate.invalid && manufactureDate.touched">This field is required
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Expire Date</label>
+                                <input name="expireDate" #expireDate="ngModel"
+                                    [(ngModel)]="service.batchDetails.expireDate" class="form-control" required>
+                                <div class="validation-error" *ngIf="expireDate.invalid && expireDate.touched">This
+                                    field is required</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <div class="form-group">
+                        <label>Received Date</label>
+                        <input name="receivedDate" #receivedDate="ngModel"
+                            [(ngModel)]="service.batchDetails.receivedDate" class="form-control" required>
+                        <div class="validation-error" *ngIf="receivedDate.invalid && receivedDate.touched">This field is
+                            required</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Unite Price</label>
+                                <input name="unitePrice" #unitePrice="ngModel"
+                                    [(ngModel)]="service.batchDetails.unitePrice" class="form-control" required>
+                                <div class="validation-error" *ngIf="unitePrice.invalid && unitePrice.touched">This
+                                    field is required</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Sales Price</label>
+                                <input name="salesPrice" #salesPrice="ngModel"
+                                    [(ngModel)]="service.batchDetails.salesPrice" class="form-control" required>
+                                <div class="validation-error" *ngIf="salesPrice.invalid && salesPrice.touched">This
+                                    field is required</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+        <div class="row" name="ButtonlogComponent">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <button type="submit" [disabled]="form.invalid"
+                                class="btn btn-lg btn-block btn-secondary">{{test}}</button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button type="reset" class="btn btn-lg btn-block btn-secondary" (click)="cleardetails()">CLEAR</button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </form>
+
+
+    <div class="row" name="TablelogComponent">
+        <div class="col-md-12">
+            <table class="table table-hover table-bordered">
+                <!-- [hidden]="hideloglist" -->
+                <thead class="thead-dark thead-center">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Number</th>
+                        <th scope="col">Manufacture Date</th>
+                        <th scope="col">Expire Date</th>
+                        <th scope="col">Received Date</th>
+                        <th scope="col">Unite Price</th>
+                        <th scope="col">Sales Price</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+
+                <tr *ngFor="let batchDetails of service.batchList">
+
+                    <td >{{batchDetails.id}}</td>
+                    <td >{{batchDetails.number}}</td>
+                    <td >{{batchDetails.manufactureDate}}</td>
+                    <td >{{batchDetails.expireDate}}</td>
+                    <td >{{batchDetails.receivedDate}}</td>
+                    <td >{{batchDetails.unitePrice}}</td>
+                    <td >{{batchDetails.salesPrice}}</td>
+                    <td><button class="btn btn-sm btn-success" (click)="populateForm(batchDetails)">Edit</button>
+                    </td>
+                    <td><button class="btn btn-sm btn-danger" (click)="onDelete(batchDetails.id)"> X </button></td>
+                </tr>
+            </table>
+
+
+        </div>
+    </div>
+</div>
